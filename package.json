@@ -7,7 +7,11 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "build-task:scss-compile": "node-sass-chokidar --source-map true scss/ -o css",
+    "build-task:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "chokidar 'scss/**/*.scss' -c 'npm run sass:build'",
+    "dev": "npm-run-all -p sass:*"
   },
   "author": "",
   "license": "ISC",
@@ -26,8 +30,13 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.6",
     "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^3.10.1",
+    "chokidar-cli": "^1.2.0",
+    "lodash": "^4.17.4",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
