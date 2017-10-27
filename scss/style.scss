@@ -8,15 +8,40 @@
   }
 }
 
-.video-item img {
-  max-width: 64px;
+.avatar {
+  width:100%;
 }
 
-.video-detail .details {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.optButton {
+  border: 0;
+  background-color: #ddd;
+  padding: 0 3px;
+  margin: 2px;
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.media-object {
+  max-width: 150px;
+}
+
+.video {
+  &-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &-item img {
+    max-width: 64px;
+  }
+
+  &-detail .details {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
 }
 
 .list-group-item {
