@@ -1,25 +1,22 @@
 # ReduxSimpleStarter
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This project is based on the [Learning Redux](https://www.udemy.com/react-redux/) tutorial on Udemy made by Stephen Grider.
+
+The original GitHub repo is : `https://github.com/StephenGrider/ReduxSimpleStarter`
+
+I first follow the tutorial, then I replace Youtube API by another one in order to improve my React / redux skills
+
 
 ### Getting Started
 
-There are two methods for getting started with this repo.
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
+> git clone https://github.com/Pochwar/ReduxSimpleStarter.git
 > cd ReduxSimpleStarter
 > npm install
+> npm run sass:build
 > npm start
 ```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
+Then visit `http://localhost:8080`
