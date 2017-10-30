@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import geocoder from 'geocoder';
-
-geocoder.geocode("Nantes", function (err, data) {
-  console.dir(data.results[0]);
-});
 
 export default class OptionBarLocation extends Component {
   render() {
-
-    if (!this.props.nbPages) return <div>Loading...</div>;
-
-    let pagesNumbers = [];
-    for(let i=1; i <= this.props.nbPages; i++) {
-      pagesNumbers.push(
+    const locationsTab = this.props.locationsTab;
+    let locations = [];
+    for(let key in locationsTab) {
+      locations.push(
         <button
           className="optButton"
-          onClick={() => this.onButtonClick(i)}>{i}
+          onClick={() => this.onButtonClick(locationsTab[key])}>{key}
         </button>
       )
     }
 
     return (
       <div>
-        Page : {pagesNumbers}
+        <div>
+          filtrer par lieu : {locations}
+        </div>
       </div>
     );
+
   }
 
-  onButtonClick(nb) {
-    this.props.nbPageActive(nb)
+  onButtonClick(location) {
+    this.props.locationChange(location)
   }
 }

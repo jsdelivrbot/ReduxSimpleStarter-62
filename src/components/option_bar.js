@@ -12,7 +12,10 @@ const OptionBar = props => {
         nbPages={props.nbPages}
         nbPageActive={props.nbPageActive}
       />
-      <OptionBarLocation />
+      <OptionBarLocation
+        locationsTab={props.locationsTab}
+        locationChange={props.locationChange}
+      />
     </div>
   );
 }
