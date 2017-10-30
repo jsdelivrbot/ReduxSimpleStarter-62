@@ -52,4 +52,7 @@
   &:hover {
     background-color: #eee;
   }
+  &.activeItem {
+    background-color: #73c3dd;
+  }
 }

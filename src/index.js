@@ -105,6 +105,7 @@ class App extends Component{
         />
         <GooderDetail gooder={this.state.selectedGooder} />
         <GooderList
+          actualGooder={this.state.selectedGooder}
           onGooderSelect={selectedGooder => this.setState({selectedGooder})}
           gooders={this.state.gooders}
         />
