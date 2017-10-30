@@ -1,9 +1,13 @@
+$blue: #73c3dd;
+$light_grey: #ddd;
+$grey: #eee;
+
 .search-bar {
   margin: 20px;
   text-align: center;
   input {
     width:100%;
-    border: 1px solid #ddd;
+    border: 1px solid $light_grey;
     border-radius: 4px;
   }
 }
@@ -14,14 +18,14 @@
 
 .optButton {
   border: 0;
-  background-color: #ddd;
+  background-color: $light_grey;
   padding: 0 3px;
   margin: 2px;
   &:hover {
-    background-color: #eee;
+    background-color: $grey;
   }
   &.active {
-    background-color: #73c3dd;
+    background-color: $blue;
   }
 }
 
@@ -42,7 +46,7 @@
   &-detail .details {
     margin-top: 10px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid $light_grey;
     border-radius: 4px;
   }
 }
@@ -50,9 +54,9 @@
 .list-group-item {
   cursor: pointer;
   &:hover {
-    background-color: #eee;
+    background-color: $grey;
   }
   &.activeItem {
-    background-color: #73c3dd;
+    background-color: $blue;
   }
 }
