@@ -20,6 +20,9 @@
   &:hover {
     background-color: #eee;
   }
+  &.active {
+    background-color: #73c3dd;
+  }
 }
 
 .media-object {

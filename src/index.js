@@ -16,6 +16,8 @@ const LOCATIONS = {
   'La Rochelle' : '46.160329%2C-1.1511390000000574'
 };
 
+const GOODER_PER_PAGE = [3, 5, 10];
+
 class App extends Component{
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class App extends Component{
       options: {
         limit:3,
         page: 1,
-        location: null // nantes -> 47.218371%2C-1.553621000000021
+        location: ''
       }
     }
     this.callMyGooderApi(MG_API_URL, this.state.options);
@@ -89,11 +91,15 @@ class App extends Component{
           // option bar
           nbGooders={this.state.nbGooders}
           // option bar nb items
+          actualNbGooderPerPage={this.state.options.limit}
+          nbGooderPerPageTab={GOODER_PER_PAGE}
           nbGooderPerPageChange={nb => nbGooderPerPageChange(nb)}
           // option bar nb pages
+          actualNbPage={this.state.options.page}
           nbPages={this.state.nbPages}
-          nbPageActive={nb => nbPageChange(nb)}
+          nbPageChange={nb => nbPageChange(nb)}
           // option bar location
+          actualLocation={this.state.options.location}
           locationsTab={LOCATIONS}
           locationChange={location => locationChange(location)}
         />

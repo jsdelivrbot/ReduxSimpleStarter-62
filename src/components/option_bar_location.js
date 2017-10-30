@@ -5,9 +5,13 @@ export default class OptionBarLocation extends Component {
     const locationsTab = this.props.locationsTab;
     let locations = [];
     for(let key in locationsTab) {
+      let classes = 'optButton';
+      if (this.props.actualLocation == locationsTab[key]) {
+        classes += ' active';
+      }
       locations.push(
         <button
-          className="optButton"
+          className={classes}
           onClick={() => this.onButtonClick(locationsTab[key])}>{key}
         </button>
       )

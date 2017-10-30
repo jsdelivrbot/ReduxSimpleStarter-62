@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 
 export default class OptionBarNbItems extends Component {
   render() {
+    const nbGooderPerPageTab = this.props.nbGooderPerPageTab;
+
+    let nbGooderPerPage = [];
+    nbGooderPerPageTab.forEach(nb => {
+      let classes = 'optButton';
+      if (this.props.actualNbGooderPerPage == nb) {
+        classes += ' active';
+      }
+      nbGooderPerPage.push(<button className={classes} onClick={() => this.onButtonClick(nb)}>{nb}</button>)
+    })
+
+
+
     return (
       <div>
         <div>
-          Gooders par page :
-          <button className="optButton" onClick={() => this.onButtonClick(3)}>3</button>
-          <button className="optButton" onClick={() => this.onButtonClick(5)}>5</button>
-          <button className="optButton" onClick={() => this.onButtonClick(10)}>10</button>
+          Gooders par page : {nbGooderPerPage}
         </div>
       </div>
     );

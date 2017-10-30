@@ -7,12 +7,18 @@ const OptionBar = props => {
   return (
     <div>
       <div>{props.nbGooders} Gooders</div>
-      <OptionBarNbItems nbGooderPerPageChange={props.nbGooderPerPageChange}/>
+      <OptionBarNbItems
+        actualNbGooderPerPage={props.actualNbGooderPerPage}
+        nbGooderPerPageTab={props.nbGooderPerPageTab}
+        nbGooderPerPageChange={props.nbGooderPerPageChange}
+      />
       <OptionBarNbPage
+        actualNbPage={props.actualNbPage}
         nbPages={props.nbPages}
-        nbPageActive={props.nbPageActive}
+        nbPageChange={props.nbPageChange}
       />
       <OptionBarLocation
+        actualLocation={props.actualLocation}
         locationsTab={props.locationsTab}
         locationChange={props.locationChange}
       />

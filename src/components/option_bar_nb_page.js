@@ -6,9 +6,13 @@ export default class OptionBarNbPage extends Component {
 
     let pagesNumbers = [];
     for(let i=1; i <= this.props.nbPages; i++) {
+      let classes = 'optButton';
+      if (this.props.actualNbPage == i) {
+        classes += ' active';
+      }
       pagesNumbers.push(
         <button
-          className="optButton"
+          className={classes}
           onClick={() => this.onButtonClick(i)}>{i}
         </button>
       )
@@ -22,6 +26,6 @@ export default class OptionBarNbPage extends Component {
   }
 
   onButtonClick(nb) {
-    this.props.nbPageActive(nb)
+    this.props.nbPageChange(nb)
   }
 }
